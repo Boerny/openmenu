@@ -7,6 +7,9 @@
           <NuxtLink :to="{ name: 'canteens-meals-id', params: { canteenid: canteen.id, day: '2019-03-25' } }">
           {{ canteen.name }}
         </NuxtLink>
+          <NuxtLink :to="{ name: 'canteens-id', params: { id: canteen.id,name:canteen.name, address: canteen.address } }">
+          {{ canteen.id }}
+        </NuxtLink>
         </li>
       </ul>
       <p>
