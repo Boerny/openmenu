@@ -15,7 +15,7 @@
           to="/about"
           class="button--grey">About</nuxt-link>
         <nuxt-link
-          to="/canteens/canteen"
+          to="/canteens"
           class="button--grey">Canteens</nuxt-link>
       </div>
     </div>

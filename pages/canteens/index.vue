@@ -10,7 +10,7 @@
         </li>
       </ul>
       <p>
-        <nuxt-link to="/canteens/canteen" class="button--grey">Back home</nuxt-link>
+        <nuxt-link to="/" class="button--grey">Back home</nuxt-link>
       </p>
     </div>
   </div>
@@ -20,17 +20,9 @@
 import axios from "axios";
 export default {
   asyncData({ params }) {
-    if (params.id) {
-      return axios
-        .get(`https://openmensa.org/api/v2/canteens/${params.id}`)
-        .then(res => {
-          return { canteens: res.data };
-        });
-    } else {
       return axios.get(`https://openmensa.org/api/v2/canteens`).then(res => {
         return { canteens: res.data };
       });
-    }
   }
 };
 </script>
