@@ -11,7 +11,7 @@
         </li>
       </ul>
       <p>
-        <nuxt-link to="/canteen" class="button--grey">Back to canteens</nuxt-link>
+        <nuxt-link to="/canteens" class="button--grey">Back to canteens</nuxt-link>
       </p>
     </div>
   </div>
@@ -21,16 +21,16 @@
 import axios from "axios";
 export default {
   async asyncData({ params }) {
-    if (params.canteenId && params.day) {
-      // `https://openmensa.org/api/v2/canteens/${params.canteenId}/days/${params.day}/meals`)
+    if (params.id && params.day) {
+      // `https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
       return axios
-        .get(`https://openmensa.org/api/v2/canteens/1/days/2019-03-25/meals`)
+        .get(`https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
         .then(res => {
           return { meals: res.data };
         });
     } else {
       return axios
-        .get(`https://openmensa.org/api/v2/canteens/1/days/2019-03-25/meals`)
+        .get(`https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
         .then(res => {
           return { meals: res.data };
         });

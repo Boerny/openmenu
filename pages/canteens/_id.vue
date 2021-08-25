@@ -5,13 +5,12 @@
       <p>{{address}}</p>
       <ul>
         <li v-for="(day, index) in days" :key="index">
-          <NuxtLink
-            :to="{ name: 'canteens-id', params: { canteenid: cid, day: day.date } }"
-          >{{ days.date}}</NuxtLink>
+          <NuxtLink :to="{ name: 'canteens-id', params: { id: cid, day: day.date } }"
+          >{{day.date}}</NuxtLink>
         </li>
       </ul>
       <p>
-        <nuxt-link to="/canteens/canteen" class="button--grey">Back home</nuxt-link>
+        <nuxt-link to="/canteens" class="button--grey">Back home</nuxt-link>
       </p>
     </div>
   </div>
