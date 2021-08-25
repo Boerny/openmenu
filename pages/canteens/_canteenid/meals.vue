@@ -7,6 +7,7 @@
           <div>{{ meal.name }}</div>
           <div>{{ meal.category }}</div>
           <div><ul><li class="price" v-for="(price, index) in meals.prices" :key="index">{{price}}</li></ul></div>
+          <div>{{ meal.prices }}</div>
           <div>{{ meal.notes }}</div>
         </li>
       </ul>
@@ -21,16 +22,16 @@
 import axios from "axios";
 export default {
   async asyncData({ params }) {
-    if (params.id && params.day) {
+    if (params.canteenid && params.day) {
       // `https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
       return axios
-        .get(`https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
+        .get(`https://openmensa.org/api/v2/canteens/${params.canteenid}/days/${params.day}/meals`)
         .then(res => {
           return { meals: res.data };
         });
     } else {
       return axios
-        .get(`https://openmensa.org/api/v2/canteens/${params.id}/days/${params.day}/meals`)
+        .get(`https://openmensa.org/api/v2/canteens/${params.canteenid}/days/${params.day}/meals`)
         .then(res => {
           return { meals: res.data };
         });

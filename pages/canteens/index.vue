@@ -4,7 +4,7 @@
       <h1>Kantinen</h1>
       <ul>
         <li v-for="(canteen, index) in canteens" :key="index">
-          <NuxtLink :to="{ name: 'canteens-id-meals', params: {id: canteen.id, day: '2021-08-27' } }">
+          <NuxtLink :to="{ name: 'canteens-canteenid-meals', params: {canteenid: canteen.id, day: '2021-08-27' } }">
           {{ canteen.name }}
         </NuxtLink>
           <NuxtLink :to="{ name: 'canteens-id', params: { id: canteen.id,name:canteen.name, address: canteen.address } }">
